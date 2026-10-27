@@ -1,0 +1,6 @@
+@echo off
+echo Starting Devign Vulnerability Detection Web Prototype...
+echo Opening http://localhost:5000 in your browser...
+start http://localhost:5000
+.\.venv\Scripts\python.exe app.py
+pause

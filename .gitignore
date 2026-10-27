@@ -1,0 +1,37 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Joern CPG and intermediate files
+*.bin
+*.bin.zip
+
+# Large data files
+data/raw/
+data/processed/
+data/graphs/
+
+# Models and checkpoints
+models/checkpoints/
+
+# Logs and outputs
+logs/
+results/predictions/
+results/metrics/
+results/plots/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+tools/
+devign_pyg_10000/
+scratch/
+workspace/

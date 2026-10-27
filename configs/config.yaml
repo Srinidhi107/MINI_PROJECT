@@ -1,0 +1,43 @@
+# Experiment and reproducibility
+seed: 42
+device: "cpu" # "cuda" if GPU is available, otherwise "cpu"
+
+# Data settings
+data:
+  graph_dir: "data/graphs"
+  vocab_path: "data/graphs/vocab.json"
+  num_classes: 2
+  node_type_dim: 17
+  max_tokens_per_node: 10
+  node_feature_dim: 33
+  graph_vec_dim: 32
+  edge_types: 10
+  max_seq_len: 128
+
+# Model architecture settings
+model:
+  type: "DualStreamGraphTransformer"
+  hidden_dim: 128
+  num_layers: 3
+  num_heads: 4
+  dropout: 0.25
+  drop_edge: 0.15
+  pooling: "vuln" # Options: vuln (vulnerability-focused MHA+Max), topk (top-k salient), multihead (4-head attention), hybrid, attention, mean, max
+  max_seq_len: 128
+
+# Training hyperparameters
+training:
+  batch_size: 128
+  learning_rate: 0.001
+  weight_decay: 0.0005
+  label_smoothing: 0.05
+  epochs: 5
+  early_stopping_patience: 10
+  lr_scheduler_factor: 0.5
+  lr_scheduler_patience: 3
+
+# Checkpoints and output
+output:
+  checkpoint_dir: "models/checkpoints"
+  best_model_name: "best_graph_transformer.pt"
+  results_dir: "results"
